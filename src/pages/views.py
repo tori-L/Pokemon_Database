@@ -80,11 +80,11 @@ def search(request):
     if selector == "ev":
         ev_dict = {1: {}, 2: {}, 3: {}}
         search_ev = search_term.replace(' ', '-').lower()
-        if "special" not in search_ev:
-            poke_by_ev = models.RawPokeData.objects.filter(evs=search_ev).exclude(evs__icontains="special")
-        else:
+        if search_ev in ["attack", "defense", "hp", "speed"]:
+            poke_by_ev = models.RawPokeData.objects.filter(evs__icontains=search_ev).exclude(evs__icontains='special')
+        elif search_ev in ["special-attack", "special-defense"]:
             poke_by_ev = models.RawPokeData.objects.filter(evs__icontains=search_ev)
-        if len(poke_by_ev) == 0:
+        else:
             return render(request, "pages/home.html", {"error": "Please use the full name (i.e. special attack)"})
         for pokemon in poke_by_ev:
             poke_data = pokemon.data
