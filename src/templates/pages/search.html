@@ -1,0 +1,59 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{% static 'pages/search.css' %}">
+</head>
+<body>
+<ul>
+    <li><a href="{%url 'home' %}">Home</a></li>
+    <li><a href="{% url 'favorites' %}">Favorites</a></li>
+    <li><a href="{% url 'typechart' %}">Type Chart</a></li>
+    <li><a href="{% url 'naturechart' %}">Nature Chart</a></li>
+</ul>
+
+<center><h1>Here are the Pokemon for {{search_term.upper}}</h1></center>
+
+{% if selector == "type" %}
+    <center><h2>Monotype</h2></center>
+    <div class="grid-container">
+    {% for name,sprite in mono_list.items %}
+            <div class="grid-item"><a class="poke-link" href="{% url 'pokemon:poke_view' name%}">
+                <img src={{sprite}} width="130" height="130">{{name}}</a> </div>
+    {% endfor %}
+    </div>
+
+    <center><h2>Dual-Type</h2></center>
+    <div class="grid-container">
+    {% for name,sprite in dual_list.items %}
+            <div class="grid-item"><a class="poke-link" href="{% url 'pokemon:poke_view' name%}">
+                <img src={{sprite}} width="130" height="130">{{name}}</a> </div>
+    {% endfor %}
+    </div>
+
+{% elif selector == "ev" %}
+    {% for yield, poke_dict in ev_dict.items %}
+        <center><h2>{{yield}} {{search_term.upper}}</h2></center>
+        <div class="grid-container">
+        {% for name,sprite in poke_dict.items %}
+            <div class="grid-item"><a class="poke-link" href="{% url 'pokemon:poke_view' name%}">
+                <img src={{sprite}} width="130" height="130">{{name}}</a> </div>
+        {% endfor %}
+        </div>
+    {% endfor %}
+
+{% else %}
+    <div class="grid-container">
+        {% for name,sprite in search_list.items %}
+            <div class="grid-item"><a class="poke-link" href="{% url 'pokemon:poke_view' name%}">
+                <img src={{sprite}} width="130" height="130">{{name}}</a></div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+h1 {
+    font-family: verdana;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 50px;
+}
+
+a {
+    font-family: verdana;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: crimson;
+    text-decoration: none;
+}
+
+a:active {
+    color: crimson;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}

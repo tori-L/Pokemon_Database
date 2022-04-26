@@ -1,0 +1,247 @@
+h1 {
+    font-family: verdana;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 50px;
+    text-align: center;
+}
+
+table {
+    border: solid black 1px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.normal {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: lightgrey;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.fire {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: darkorange;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.water {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.grass {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: limegreen;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.electric {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: gold;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.ice {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: paleturquoise;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.fighting {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: firebrick;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.poison {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: darkmagenta;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.ground {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: #e8d078;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.flying {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: lavender;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.psychic {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: hotpink;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+   }
+
+.bug {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: olivedrab;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.rock {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: darkgoldenrod;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.ghost {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.dragon {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.dark {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: #43342d;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.steel {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: #bfbfbf;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+.fairy {
+    font-family: "courier new";
+    border-radius: 8px;
+    background-color: #ff99ff;
+    color: white;
+    font-size: 14px;
+    border: solid white 1px;
+}
+
+th, td {
+    border: gainsboro 2px solid;
+    text-align: center;
+    font-family: verdana;
+    padding: 8px;
+    position: relative;
+}
+
+.ad-td {
+    font-size: 10px;
+    font-family: verdana;
+    border: solid white 1px;
+}
+
+tr:hover {
+    background-color: lightpink;
+}
+
+td:hover::after {
+    content: '*';
+    position: absolute;
+    background-color: aliceblue;
+    top: -5000px;
+    height: 10000px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+a {
+    font-family: verdana;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: crimson;
+    text-decoration: none;
+}
+
+a:active {
+    color: crimson;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}

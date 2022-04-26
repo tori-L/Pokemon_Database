@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type Chart</title>
+    <link rel="stylesheet" href="{% static 'pages/typechart.css' %}">
+</head>
+<body>
+<ul>
+    <li><a href="{%url 'home' %}">Home</a></li>
+    <li><a href="{% url 'favorites' %}">Favorites</a></li>
+    <li><a href="{% url 'typechart' %}">Type Chart</a></li>
+    <li><a href="{% url 'naturechart' %}">Nature Chart</a></li>
+</ul>
+
+<h1>Interactive Type Chart</h1>
+
+<table width="100%">
+    <tr>
+        <td class="ad-td">Attacker (Down) | Defender (Right)</td> <th class="normal">Normal</th> <th class="fire">Fire</th> <th class="water">Water</th> <th class="grass">Grass</th> <th class="electric">Electric</th> <th class="ice">Ice</th> <th class="fighting">Fighting</th> <th class="poison">Poison</th> <th class="ground">Ground</th> <th class="flying">Flying</th> <th class="psychic">Psychic</th> <th class="bug">Bug</th> <th class="rock">Rock</th> <th class="ghost">Ghost</th> <th class="dragon">Dragon</th> <th class="dark">Dark</th> <th class="steel">Steel</th> <th class="fairy">Fairy</th>
+    </tr>
+    <tr>
+        <th class="normal">Normal</th> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>0</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="fire">Fire</th> <td>-</td> <td>1/2x</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>1/2x</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>2x</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="water">Water</th> <td>-</td> <td>2x</td> <td>1/2x</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="grass">Grass</th> <td>-</td> <td>1/2x</td> <td>2x</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>2x</td> <td>1/2x</td> <td>-</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>1/2x</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="electric">Electric</th> <td>-</td> <td>-</td> <td>2x</td> <td>1/2x</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>0</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="ice">Ice</th> <td>-</td> <td>1/2x</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>2x</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>1/2</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="fighting">Fighting</th> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>1/2x</td> <td>1/2x</td> <td>1/2x</td> <td>2x</td> <td>0</td> <td>-</td> <td>2x</td> <td>2x</td> <td>1/2x</td>
+    </tr>
+    <tr>
+        <th class="poison">Poison</th> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>0</td> <td>2x</td>
+    </tr>
+    <tr>
+        <th class="ground">Ground</th> <td>-</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>0</td> <td>-</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="flying">Flying</th> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>1/2x</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="psychic">Psychic</th> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>2x</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>0</td> <td>1/2x</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="bug">Bug</th> <td>-</td> <td>1/2x</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>1/2x</td> <td>-</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>2x</td> <td>1/2x</td> <td>1/2x</td>
+    </tr>
+    <tr>
+        <th class="rock">Rock</th> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>1/2x</td> <td>-</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="ghost">Ghost</th> <td>0</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>-</td>
+    </tr>
+    <tr>
+        <th class="dragon">Dragon</th> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>0</td>
+    </tr>
+    <tr>
+        <th class="dark">Dark</th> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>1/2x</td> <td>-</td> <td>1/2x</td>
+    </tr>
+    <tr>
+        <th class="steel">Steel</th> <td>-</td> <td>1/2x</td> <td>1/2x</td> <td>-</td> <td>1/2x</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>-</td> <td>-</td> <td>-</td> <td>1/2x</td> <td>2x</td>
+    </tr>
+    <tr>
+        <th class="fairy">Fairy</th> <td>-</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>1/2x</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>2x</td> <td>2x</td> <td>1/2x</td> <td>-</td>
+    </tr>
+</table>
+
+</body>
+</html>

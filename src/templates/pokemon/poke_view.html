@@ -1,0 +1,158 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {{name}} </title>
+    <link rel="stylesheet" href="{% static 'pokemon/poke_view.css' %}">
+</head>
+<body>
+<ul class="menu">
+    <li><a href="{%url 'home' %}">Home</a></li>
+    <li><a href="{% url 'favorites' %}">Favorites</a></li>
+    <li><a href="{% url 'typechart' %}">Type Chart</a></li>
+    <li><a href="{% url 'naturechart' %}">Nature Chart</a></li>
+</ul>
+
+<h1><center> {{name}} </center></h1>
+<form action="{% url 'pokemon:to_favorite' name%}" method=POST>
+    {% csrf_token %}
+    <center>
+        {% if fav == True %}
+            <input class="button-unfavorite" type="submit" value="Unfavorite">
+        {% else %}
+            <input class="button-favorite" type="submit" value="Favorite">
+        {% endif %}
+    </center>
+    </form>
+<center><a class="smogon-button" href="https://www.smogon.com/dex/ss/pokemon/{{name.lower}}/">Smogon Movelist for {{name}}</a></center>
+<center> <img src={{artwork}}> </center>
+{% if national_id < 10 %}
+    <h3><center> National PokeDex ID: 00{{national_id}} </center></h3>
+{% elif national_id < 100 %}
+    <h4><center> National PokeDex ID: 0{{national_id}} </center></h4>
+{% else %}
+    <h4><center> National PokeDex ID: {{national_id}} </center></h4>
+{% endif %}
+
+{% if type|length == 2 %}
+<h4><center> {{type.0.capitalize}}, {{type.1.capitalize}} </center></h4>
+{% else %}
+<h4><center> {{type.0.capitalize}} </center></h4>
+{% endif %}
+
+<center>
+    <ul>
+    {% for stat,num in base.items %}
+        {{stat.capitalize}}: {{num}} |
+        {% endfor %}
+    </ul>
+</center>
+
+<center>
+    EV Yield:
+    {% for stat, effort in EV.items %}
+        {{effort}} {{stat.capitalize}}.
+    {% endfor %}
+</center>
+<center>
+<h2>Evolution</h2>
+    {% if evolutions %}
+        <div class="evo_grid">
+        {% for name, content in evolutions.items %}
+            {% if content.tier == 1 %}
+                <div class="tier1">
+                        <a href="{% url 'pokemon:poke_view' name%}"><img src={{content.sprite}} width="130" height="130"></a>
+                        <br><strong>{{name.capitalize}}</strong><br>
+                        Tier: {{content.tier}}
+                </div>
+
+            {% elif content.tier == 2 %}
+                <div class="tier2">
+                       (
+                    {% for condition, need in content.to_evolve.items %}
+                        {% if condition == 'item' %}
+                            {{need.capitalize}}
+                        {% elif condition == 'min_level' %}
+                            Evolves at Lvl {{need}}
+                        {% elif condition == 'gender' %}
+                            {% if need == 1 %}
+                                Female |
+                            {% else %}
+                                Male |
+                            {% endif %}
+                        {% elif condition == 'trigger' %}
+                                {% if need != 'level-up' and need != 'use-item' %}
+                                    {{need.capitalize}}
+                                {% endif %}
+                        {% elif condition == 'min_happiness' %}
+                                Happiness: {{need}}
+                        {% elif condition == 'location' %}
+                                Level at {{need.capitalize}}
+                        {% elif condition == 'time_of_day' %}
+                                Level at {{need}}
+                        {% elif condition == 'known_move_type' %}
+                            Know {{need.capitalize}}-type move
+                        {% elif condition == 'min_affection' %}
+                            Affection: {{need}}
+                        {% else %}
+                            {{condition.capitalize}}: {{need}}
+                        {% endif %}
+                        •
+                    {% endfor %}
+                    )<br><br>
+                    ⬇
+                    <br><a href="{% url 'pokemon:poke_view' name%}"><img src={{content.sprite}} width="130" height="130"></a>
+                    <br><strong>{{name.capitalize}}</strong><br>
+                    Tier: {{content.tier}}
+                </div>
+                <br>
+            {% else %}
+                <div class="tier3">
+                        (
+                    {% for condition, need in content.to_evolve.items %}
+                        {% if condition == 'item' %}
+                            {{need.capitalize}}
+                        {% elif condition == 'min_level' %}
+                            Evolves at Lvl {{need}}
+                        {% elif condition == 'gender' %}
+                            {% if need == 1 %}
+                                Female |
+                            {% else %}
+                                Male |
+                            {% endif %}
+                        {% elif condition == 'trigger' %}
+                                {% if need != 'level-up' and need != 'use-item' %}
+                                    {{need.capitalize}}
+                                {% endif %}
+                        {% elif condition == 'min_happiness' %}
+                                Happiness: {{need}}
+                        {% elif condition == 'location' %}
+                                Level at {{need.capitalize}}
+                        {% elif condition == 'time_of_day' %}
+                                Level at {{need}}
+                        {% elif condition == 'known_move_type' %}
+                            Know {{need.capitalize}}-type move
+                        {% elif condition == 'min_affection' %}
+                            Affection: {{need}}
+                        {% else %}
+                            {{condition.capitalize}}: {{need}}
+                        {% endif %}
+                        •
+                    {% endfor %}
+                    )<br><br>
+                    ⬇
+                    <br>
+                    <br><a href="{% url 'pokemon:poke_view' name%}"><img src={{content.sprite}} width="130" height="130"></a>
+                    <br><strong>{{name.capitalize}}</strong> <br>
+                    Tier: {{content.tier}}
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% else %}
+    <strong>No Evolution for this Pokemon</strong>
+    {% endif %}
+</center>
+</body>
+</html>

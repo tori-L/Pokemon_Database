@@ -1,0 +1,129 @@
+h1 {
+    font-family: verdana;
+    border: black solid 4px;
+    border-radius: 5px;
+    background-color: lightgrey;
+
+}
+
+h2 {
+    font-family: verdana;
+    border: black solid 2px;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+}
+
+.home-button {
+    padding: 5px;
+    border: black solid 3px;
+    border-radius: 5px;
+    background-color: black;
+    font-family: verdana;
+}
+
+.smogon-button {
+    border: black solid 3px;
+    border-radius: 5px;
+    background-color: black;
+    padding: 3px;
+    font-family: verdana;
+    margin: 20px;
+}
+
+.button-unfavorite {
+    padding: 10px;
+    text-decoration: none;
+    font-family: verdana;
+    margin: 5px;
+    background-color: gold;
+    border: solid white 2px;
+    color: black;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.button-unfavorite:hover {
+    background-color: white;
+    color: black;
+    border: solid black 2px;
+}
+
+.button-favorite {
+    padding: 10px;
+    text-decoration: none;
+    font-family: verdana;
+    margin: 5px;
+    background-color: white;
+    border: solid black 2px;
+    color: black;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.button-favorite:hover {
+    background-color: gold;
+    border: solid white 2px;
+    color: black;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 5px;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    font-family: verdana;
+}
+
+.evo_grid {
+    display: grid;
+    margin: auto;
+    grid-template-columns: auto;
+    grid-row-gap: 2rem;
+}
+
+.tier1 {
+    font-family: verdana;
+    grid-row: 1;
+    justify-self: end;
+}
+
+.tier2 {
+    font-family: verdana;
+    grid-row: 2;
+    justify-self: end;
+}
+
+.tier3 {
+    font-family: verdana;
+    grid-row: 3;
+    justify-self: end;
+}

@@ -1,0 +1,135 @@
+h1 {
+    font-family: verdana;
+    display: block;
+    background-color: crimson;
+    font-size: 50px;
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+}
+
+img {
+    padding: 20px;
+}
+
+.reset-button {
+    background-color: white;
+    color: black;
+    border: solid black 3px;
+    font-family: verdana;
+    padding: 10px 5px 10px 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition-duration: 1.0s;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: maroon;
+    color: white;
+}
+
+.evo-button {
+    background-color: white;
+    color: black;
+    border: solid black 3px;
+    font-family: verdana;
+    padding: 10px 5px 10px 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition-duration: 1.0s;
+    cursor: pointer;
+}
+
+.evo-button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.search-button {
+    background-color: white;
+    color: black;
+    border: solid black 2px;
+    font-family: verdana;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: maroon;
+    color: white;
+}
+
+.search-bar {
+    background-color: white;
+    color: black;
+    border: solid black 2px;
+    font-family: verdana;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.search-bar:hover {
+    background-color: ghostwhite;
+}
+
+select {
+    padding: 10px;
+    background-color: white;
+    font-family: verdana;
+    font-size: 15px;
+    border: none;
+}
+
+label {
+    font-family: verdana;
+    font-size: 20px;
+    margin: 10px 10px 10px 10px;
+    border: none;
+    padding: 10px 10px 10px 10px;
+}
+
+p {
+    font-family: verdana;
+    color: maroon;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: crimson;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    font-family: verdana;
+}

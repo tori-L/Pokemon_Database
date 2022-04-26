@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="{% static 'pages/favorites.css' %}">
+</head>
+<body>
+<ul class="menu">
+    <li><a href="{%url 'home' %}" class="menu-item">Home</a></li>
+    <li><a href="{% url 'favorites' %}" class="menu-item">Favorites</a></li>
+    <li><a href="{% url 'typechart' %}" class="menu-item">Type Chart</a></li>
+    <li><a href="{% url 'naturechart' %}" class="menu-item">Nature Chart</a></li>
+</ul>
+<h1>Your Favorites!</h1>
+<ul class="grid-container">
+    {% for name,sprite in favorite_list.items %}
+        <li class="grid-item"><a class="poke-link" href="{% url 'pokemon:poke_view' name%}">
+            <img src={{sprite}} width="120" height="120">{{name.capitalize}}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

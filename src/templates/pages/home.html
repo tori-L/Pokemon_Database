@@ -1,0 +1,48 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Pymon Home </title>
+    <link rel="stylesheet" href="{% static 'pages/home.css' %}">
+</head>
+<body>
+<ul>
+    <li><a href="{% url 'favorites' %}">Favorites</a></li>
+    <li><a href="{% url 'typechart' %}">Type Chart</a></li>
+    <li><a href="{% url 'naturechart' %}">Nature Chart</a></li>
+</ul>
+
+<h1> Welcome to Pymon Database! </h1>
+
+<center><img src="{% static 'file-pokeball-png-0.png' %}"></center><br>
+
+<center>
+    <form action="{% url 'search' %}" method=POST>
+        {% csrf_token %}
+        <label for="pokemon"> Search for Pokemon! </label><br>
+        <input type="search" name="search_term" class="search-bar">
+        <select name="selector" id="pokemon">
+            <option value="pokemon">Pokemon</option>
+            <option value="moves">Moves</option>
+            <option value="ev">Effort Values</option>
+            <option value="type">Types</option>
+        </select>
+        <input type="submit" value="Search" class="search-button">
+    {% if error %} <p><strong>{{poke_name}}{{error}}</strong></p>{% endif %}
+    </form>
+</center>
+<form action="{% url 'reset_database' %}" method=POST>
+    {% csrf_token %}
+    <input type="submit" value="Reset Database" class="reset-button">
+    {% if message_reset %} <p><strong>{{message_reset}}</strong></p>{% endif %}
+</form>
+
+<form action="{% url 'pokemon:pull_evolutions' %}" method=POST>
+    {% csrf_token %}
+    <input type="submit" value="Pull All Evolutions" class="evo-button">
+    {% if message_evo %} <p><strong>{{message_evo}}</strong></p>{% endif %}
+</form>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nature Chart</title>
+    <link rel="stylesheet" href="{% static 'pages/naturechart.css' %}">
+</head>
+<body>
+
+<ul>
+    <li><a href="{%url 'home' %}">Home</a></li>
+    <li><a href="{% url 'favorites' %}">Favorites</a></li>
+    <li><a href="{% url 'typechart' %}">Type Chart</a></li>
+    <li><a href="{% url 'naturechart' %}">Nature Chart</a></li>
+</ul>
+<center>
+    <h1>Nature Chart</h1>
+    <img src="{% static 'pokemon-sword-shield-nature-chart.png' %}">
+    <p>Source: https://bulbapedia.bulbagarden.net/wiki/Nature</p>
+</center>
+</body>
+</html>
