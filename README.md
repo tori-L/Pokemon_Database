@@ -1,4 +1,5 @@
 # A Better Pokemon Database (API)
+Cute little project I did for my Python Programming class during my Master's program. Includes utilizing an API, front-end design and web face, a database, and more.
 
 # How to Run:
 The program includes an empty db.sqlite3 file (an empty database) that needs to be populated with data using the "Reset Database" and "Pull All Evolutions" buttons on the homepage of the web application. To note, gathering the data for both functions will take ~5 minutes, and if the operation is successful, a notification should show up underneath the button that says the function was successful. After both have been completed, the web application should work with full functionality. In order to start the application, while in the Pokemon_Database folder, in a command line type 'source bin/activate' to start up the virutal environment. Afterwards, please use `cd src`, followed by `python manage.py runserver`. In the terminal window, an HTTP link will populate that will lead to the application. I will provide the video I recorded as part of this final project discussing and briefly running through my database: https://youtu.be/6L8cmkX_TgE
